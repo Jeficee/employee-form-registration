@@ -6,58 +6,241 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-  <h1>EMPLOYEE INFORMATION FORM</h1>
-  <hr>
+  <div class="container mt-5">
+    <h1 class="text-center">EMPLOYEE INFORMATION FORM</h1>
+    <hr>
 
-  <form id="employeeForm">
-    <h3>Personal Information</h3>
-    Full Name: <input type="text" name="fullName" required><br><br>
-    Address: <input type="text" name="address" required><br><br>
-    Phone Number: <input type="text" name="phone" required>
-    Email: <input type="email" name="email" required><br><br>
+    <form id="employeeForm">
+      <h3 class="mt-4">Personal Information</h3>
+      <div class="mb-3">
+        Full Name: <input type="text" class="form-control" name="fullName" required>
+      </div>
+      <div class="mb-3">
+        Address: <input type="text" class="form-control" name="address" required>
+      </div>
+      <div class="mb-3">
+        Phone Number: <input type="text" class="form-control" name="phone" required>
+      </div>
+      <div class="mb-3">
+        Email: <input type="email" class="form-control" name="email" required>
+      </div>
 
-    <h3>Employment Information</h3>
-    Title: <input type="text" name="title" required>
-    Department: <input type="text" name="department" required><br><br>
-    Date of Hire: <input type="date" name="hireDate" required><br><br>
-    Employment Status:<br>
-    <input type="checkbox" name="status" value="Full Time"> Full Time
-    <input type="checkbox" name="status" value="Part Time"> Part Time
-    <input type="checkbox" name="status" value="Contractor"> Contractor
-    <input type="checkbox" name="status" value="Intern"> Intern
-    <input type="checkbox" name="status" value="Other"> Other: <input type="text" name="otherStatus"><br><br>
+      <h3 class="mt-4">Employment Information</h3>
+      <div class="mb-3">
+        Title: <input type="text" class="form-control" name="title" required>
+      </div>
+      <div class="mb-3">
+        Department: <input type="text" class="form-control" name="department" required>
+      </div>
+      <div class="mb-3">
+        Date of Hire: <input type="date" class="form-control" name="hireDate" required>
+      </div>
+      <div class="mb-3">
+        Employment Status:<br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="status" value="Full Time">
+          <label class="form-check-label">Full Time</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="status" value="Part Time">
+          <label class="form-check-label">Part Time</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="status" value="Contractor">
+          <label class="form-check-label">Contractor</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="status" value="Intern">
+          <label class="form-check-label">Intern</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="status" value="Other">
+          <label class="form-check-label">Other:</label>
+          <input type="text" class="form-control form-control-sm d-inline-block w-auto" name="otherStatus">
+        </div>
+      </div>
 
-    <h3>Education</h3>
-    Highest Level of Education: <input type="text" name="educationLevel" required><br><br>
-    Name of Institution: <input type="text" name="institution" required>
-    Degree Earned: <input type="text" name="degree" required><br><br>
-    Major/Field of Study: <input type="text" name="major" required>
-    Graduation Date: <input type="date" name="gradDate" required><br><br>
+      <h3 class="mt-4">Education</h3>
+      <div class="mb-3">
+        Highest Level of Education: <input type="text" class="form-control" name="educationLevel" required>
+      </div>
+      <div class="mb-3">
+        Name of Institution: <input type="text" class="form-control" name="institution" required>
+      </div>
+      <div class="mb-3">
+        Degree Earned: <input type="text" class="form-control" name="degree" required>
+      </div>
+      <div class="mb-3">
+        Major/Field of Study: <input type="text" class="form-control" name="major" required>
+      </div>
+      <div class="mb-3">
+        Graduation Date: <input type="date" class="form-control" name="gradDate" required>
+      </div>
 
-    <h3>Professional Experience</h3>
-    Licenses: <input type="text" name="licenses"><br><br>
-    Previous Work Experience:<br>
-    <textarea name="experience" style="height: 150px; width: 300px;"></textarea><br><br>
+      <h3 class="mt-4">Professional Experience</h3>
+      <div class="mb-3">
+        Licenses: <input type="text" class="form-control" name="licenses">
+      </div>
+      <div class="mb-3">
+        Previous Work Experience:
+        <textarea class="form-control" name="experience" style="height: 150px;"></textarea>
+      </div>
 
-    <h3>Emergency Contact Information</h3>
-    Full Name: <input type="text" name="emergencyName" required><br><br>
-    Address: <input type="text" name="emergencyAddress" required><br><br>
-    Phone Number: <input type="text" name="emergencyPhone" required>
-    Cell Phone Number: <input type="text" name="emergencyCell" required><br><br>
-    Relationship: <input type="text" name="relationship" required><br><br>
+      <h3 class="mt-4">Emergency Contact Information</h3>
+      <div class="mb-3">
+        Full Name: <input type="text" class="form-control" name="emergencyName" required>
+      </div>
+      <div class="mb-3">
+        Address: <input type="text" class="form-control" name="emergencyAddress" required>
+      </div>
+      <div class="mb-3">
+        Phone Number: <input type="text" class="form-control" name="emergencyPhone" required>
+      </div>
+      <div class="mb-3">
+        Cell Phone Number: <input type="text" class="form-control" name="emergencyCell" required>
+      </div>
+      <div class="mb-3">
+        Relationship: <input type="text" class="form-control" name="relationship" required>
+      </div>
 
-    <p>Employee Signature</p>
-    Signature: <input type="text" name="signature">
-    Date: <input type="text" name="date"><br><br>
+      <h3 class="mt-4">Employee Signature</h3>
+      <div class="mb-3">
+        Signature: <input type="text" class="form-control" name="signature">
+      </div>
+      <div class="mb-3">
+        Date: <input type="text" class="form-control" name="date">
+      </div>
 
-    <input type="submit" value="Submit" style="background-color: lightblue;">
-  </form>
-  
+      <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="form.js"></script>
+</body>
+</html>>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Information Form</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">EMPLOYEE INFORMATION FORM</h1>
+    <hr>
+
+    <form id="employeeForm">
+      <h3 class="mt-4">Personal Information</h3>
+      <div class="mb-3">
+        Full Name: <input type="text" class="form-control" name="fullName" required>
+      </div>
+      <div class="mb-3">
+        Address: <input type="text" class="form-control" name="address" required>
+      </div>
+      <div class="mb-3">
+        Phone Number: <input type="text" class="form-control" name="phone" required>
+      </div>
+      <div class="mb-3">
+        Email: <input type="email" class="form-control" name="email" required>
+      </div>
+
+      <h3 class="mt-4">Employment Information</h3>
+      <div class="mb-3">
+        Title: <input type="text" class="form-control" name="title" required>
+      </div>
+      <div class="mb-3">
+        Department: <input type="text" class="form-control" name="department" required>
+      </div>
+      <div class="mb-3">
+        Date of Hire: <input type="date" class="form-control" name="hireDate" required>
+      </div>
+      <div class="mb-3">
+        Employment Status:<br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="status" value="Full Time">
+          <label class="form-check-label">Full Time</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="status" value="Part Time">
+          <label class="form-check-label">Part Time</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="status" value="Contractor">
+          <label class="form-check-label">Contractor</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="status" value="Intern">
+          <label class="form-check-label">Intern</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="status" value="Other">
+          <label class="form-check-label">Other:</label>
+          <input type="text" class="form-control form-control-sm d-inline-block w-auto" name="otherStatus">
+        </div>
+      </div>
+
+      <h3 class="mt-4">Education</h3>
+      <div class="mb-3">
+        Highest Level of Education: <input type="text" class="form-control" name="educationLevel" required>
+      </div>
+      <div class="mb-3">
+        Name of Institution: <input type="text" class="form-control" name="institution" required>
+      </div>
+      <div class="mb-3">
+        Degree Earned: <input type="text" class="form-control" name="degree" required>
+      </div>
+      <div class="mb-3">
+        Major/Field of Study: <input type="text" class="form-control" name="major" required>
+      </div>
+      <div class="mb-3">
+        Graduation Date: <input type="date" class="form-control" name="gradDate" required>
+      </div>
+
+      <h3 class="mt-4">Professional Experience</h3>
+      <div class="mb-3">
+        Licenses: <input type="text" class="form-control" name="licenses">
+      </div>
+      <div class="mb-3">
+        Previous Work Experience:
+        <textarea class="form-control" name="experience" style="height: 150px;"></textarea>
+      </div>
+
+      <h3 class="mt-4">Emergency Contact Information</h3>
+      <div class="mb-3">
+        Full Name: <input type="text" class="form-control" name="emergencyName" required>
+      </div>
+      <div class="mb-3">
+        Address: <input type="text" class="form-control" name="emergencyAddress" required>
+      </div>
+      <div class="mb-3">
+        Phone Number: <input type="text" class="form-control" name="emergencyPhone" required>
+      </div>
+      <div class="mb-3">
+        Cell Phone Number: <input type="text" class="form-control" name="emergencyCell" required>
+      </div>
+      <div class="mb-3">
+        Relationship: <input type="text" class="form-control" name="relationship" required>
+      </div>
+
+      <h3 class="mt-4">Employee Signature</h3>
+      <div class="mb-3">
+        Signature: <input type="text" class="form-control" name="signature">
+      </div>
+      <div class="mb-3">
+        Date: <input type="text" class="form-control" name="date">
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+  </div>
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="form.js"></script>
 </body>
 </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
