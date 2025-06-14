@@ -1,83 +1,74 @@
-document.getElementById("employeeForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const form = e.target;
-  let isValid = true;
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Information Form</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">EMPLOYEE INFORMATION FORM</h1>
+    <hr><form id="employeeForm" novalidate>
+  <h3 class="mt-4">Personal Information</h3>
+  <div class="mb-3">
+    <label class="form-label">Full Name</label>
+    <input type="text" class="form-control" name="fullName" required>
+    <div class="valid-feedback">✅ Looks good!</div>
+    <div class="invalid-feedback">❌ Please provide your full name.</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Address</label>
+    <input type="text" class="form-control" name="address" required>
+    <div class="valid-feedback">✅ Looks good!</div>
+    <div class="invalid-feedback">❌ Please provide your address.</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Phone Number</label>
+    <input type="text" class="form-control" name="phone" required>
+    <div class="valid-feedback">✅ Looks good!</div>
+    <div class="invalid-feedback">❌ Please provide a phone number.</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" required>
+    <div class="valid-feedback">✅ Looks good!</div>
+    <div class="invalid-feedback">❌ Please provide a valid email.</div>
+  </div>
 
-  // Check all required fields
-  const requiredInputs = form.querySelectorAll("[required]");
-  requiredInputs.forEach(input => {
-    if (!input.value.trim()) {
-      input.classList.add("is-invalid");
-      input.classList.remove("is-valid");
-      isValid = false;
-    } else {
-      input.classList.remove("is-invalid");
-      input.classList.add("is-valid");
-    }
-  });
+  <h3 class="mt-4">Employment Information</h3>
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" class="form-control" name="title" required>
+    <div class="valid-feedback">✅ Looks good!</div>
+    <div class="invalid-feedback">❌ Please provide a title.</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Department</label>
+    <input type="text" class="form-control" name="department" required>
+    <div class="valid-feedback">✅ Looks good!</div>
+    <div class="invalid-feedback">❌ Please provide a department.</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Date of Hire</label>
+    <input type="date" class="form-control" name="hireDate" required>
+    <div class="valid-feedback">✅ Looks good!</div>
+    <div class="invalid-feedback">❌ Please provide the date of hire.</div>
+  </div>
+  <!-- You can continue adding similar blocks with validation messages -->
 
-  if (!isValid) return;
+  <input type="submit" class="btn btn-primary" value="Submit">
+</form>
 
-  const formData = {
-    fullName: form.fullName.value,
-    address: form.address.value,
-    phone: form.phone.value,
-    email: form.email.value,
-    title: form.title.value,
-    department: form.department.value,
-    hireDate: form.hireDate.value,
-    status: Array.from(form.querySelectorAll('input[name="status"]:checked')).map(cb => cb.value),
-    otherStatus: form.otherStatus.value,
-    educationLevel: form.educationLevel.value,
-    institution: form.institution.value,
-    degree: form.degree.value,
-    major: form.major.value,
-    gradDate: form.gradDate.value,
-    licenses: form.licenses.value,
-    experience: form.experience.value,
-    emergencyName: form.emergencyName.value,
-    emergencyAddress: form.emergencyAddress.value,
-    emergencyPhone: form.emergencyPhone.value,
-    emergencyCell: form.emergencyCell.value,
-    relationship: form.relationship.value,
-    signature: form.signature.value,
-    date: form.date.value,
-  };
+  </div>  <script src="js/bootstrap.bundle.min.js"></script>  <script>
+    (function () {
+      const form = document.getElementById("employeeForm");
 
-  const output = document.getElementById("displayData");
-  output.innerHTML = `
-    <h3 class="mt-5">Submitted Data</h3>
-    <h4>Personal Information</h4>
-    <p><strong>Name:</strong> ${formData.fullName || "No input"}</p>
-    <p><strong>Address:</strong> ${formData.address || "No input"}</p>
-    <p><strong>Phone:</strong> ${formData.phone || "No input"}</p>
-    <p><strong>Email:</strong> ${formData.email || "No input"}</p>
-
-    <h4>Employment Info</h4>
-    <p><strong>Title:</strong> ${formData.title || "No input"}</p>
-    <p><strong>Department:</strong> ${formData.department || "No input"}</p>
-    <p><strong>Date of Hire:</strong> ${formData.hireDate || "No input"}</p>
-    <p><strong>Status:</strong> ${(formData.status.length > 0 ? formData.status.join(", ") : formData.otherStatus || "No input")}</p>
-
-    <h4>Education</h4>
-    <p><strong>Level:</strong> ${formData.educationLevel || "No input"}</p>
-    <p><strong>Institution:</strong> ${formData.institution || "No input"}</p>
-    <p><strong>Degree:</strong> ${formData.degree || "No input"}</p>
-    <p><strong>Major:</strong> ${formData.major || "No input"}</p>
-    <p><strong>Graduation:</strong> ${formData.gradDate || "No input"}</p>
-
-    <h4>Experience</h4>
-    <p><strong>Licenses:</strong> ${formData.licenses || "No input"}</p>
-    <p><strong>Work Experience:</strong> ${formData.experience || "No input"}</p>
-
-    <h4>Emergency Contact</h4>
-    <p><strong>Name:</strong> ${formData.emergencyName || "No input"}</p>
-    <p><strong>Address:</strong> ${formData.emergencyAddress || "No input"}</p>
-    <p><strong>Phone:</strong> ${formData.emergencyPhone || "No input"}</p>
-    <p><strong>Cell:</strong> ${formData.emergencyCell || "No input"}</p>
-    <p><strong>Relationship:</strong> ${formData.relationship || "No input"}</p>
-
-    <h4>Signature</h4>
-    <p>${formData.signature || "No input"} | ${formData.date || "No input"}</p>
-  `;
-});
+      form.addEventListener("submit", function (e) {
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        form.classList.add("was-validated");
+      }, false);
+    })();
+  </script></body>
+</html>
